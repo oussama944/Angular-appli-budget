@@ -1,0 +1,85 @@
+@import '../../../main-styles.scss';
+
+.root{
+    display: flex;
+    width: 100%;
+    position: relative;
+    //survole souris 
+    &:hover{
+        .x-icon-button{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    //delete button
+    .x-icon-button{
+      position: absolute;
+      height: 34px;
+      width: 34px;  
+      background:darkblue;
+      background-image: url('../../../assets/delete_icon.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+      right: -17px;
+      top:-17px;
+        opacity: 0;
+      transform: scale(0);
+
+        //tansition
+        transition: opacity 0.2s ease-out,transform 0.2s ease-in;
+
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    
+}
+.budget-item{
+    display: flex;
+    width: 100%;
+    background-color: greenyellow ;
+    padding: 10px;
+    border-radius:5px ;
+    cursor: pointer;
+
+    .description{
+        display: flex;
+        flex-grow: 1;
+        font-size: 18px;
+        margin-left: 5px;
+        //center
+        align-items: center;
+    }
+    .amount{
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    transition: background-color 0.2s ease-out ;
+    // quand la sourris survole ça devient plus foncé
+    &:hover{
+        background-color:darken(greenyellow, 10%);
+    }
+
+}
+
+.expense{
+    p{
+        color:$orange;
+    }
+    .amount{
+        background-color:$brown ;
+    }
+}
+
+.income{
+    p{
+        color:green;
+    }
+    .amount{
+        background-color:$brown ;
+    }
+}
