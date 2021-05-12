@@ -10,10 +10,19 @@
 
 
 <section class="add-item-section">
+<<<<<<< HEAD
     <div class="add-items-container">
         <app-add-item-form style="padding: 30px" ></app-add-item-form>
+=======
+    <div class="add-item-container">
+        <app-add-item-form style="padding: 30px" (formSubmit)="addItem($event)"></app-add-item-form>
+>>>>>>> b73136b ("maj3")
     </div>
 </section>
 
 <hr style="margin-top: 0;">
+<<<<<<< HEAD
 <app-budget-item-list></app-budget-item-list>
+=======
+<app-budget-item-list [budgetItems]="budgetItems" (delete)="deleteItem($event)"></app-budget-item-list>
+>>>>>>> b73136b ("maj3")

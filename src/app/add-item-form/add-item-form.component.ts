@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
+=======
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { BudgetItem } from 'src/shared/modules/budget-item.model';
+
+>>>>>>> b73136b ("maj3")
 
 @Component({
   selector: 'app-add-item-form',
@@ -7,9 +14,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemFormComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor() { }
 
   ngOnInit(): void {
+=======
+  @Input() item: BudgetItem;
+  @Output() formSubmit: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+
+  isNewItem: boolean;
+
+  constructor() { }
+
+  ngOnInit() {
+    // if item has a value
+    if (this.item) {
+      // this means that an existing item object was passed into this component
+      // therefore this is not a new item
+      this.isNewItem = false;
+    } else {
+      this.isNewItem = true;
+      this.item = new BudgetItem('', null);
+    }
+  }
+
+  onSubmit(form: NgForm) {
+    this.formSubmit.emit(form.value);
+    form.reset();
+>>>>>>> b73136b ("maj3")
   }
 
 }

@@ -28,6 +28,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+>>>>>>> b73136b ("maj3")
               "src/styles.scss"
             ],
             "scripts": []
@@ -91,6 +95,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+>>>>>>> b73136b ("maj3")
               "src/styles.scss"
             ],
             "scripts": []
