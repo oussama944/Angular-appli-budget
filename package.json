@@ -12,35 +12,22 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.13",
-<<<<<<< HEAD
-=======
     "@angular/cdk": "^11.2.12",
->>>>>>> b73136b ("maj3")
     "@angular/common": "~11.2.13",
     "@angular/compiler": "~11.2.13",
     "@angular/core": "~11.2.13",
     "@angular/forms": "~11.2.13",
-<<<<<<< HEAD
-    "@angular/platform-browser": "~11.2.13",
-    "@angular/platform-browser-dynamic": "~11.2.13",
-    "@angular/router": "~11.2.13",
-=======
     "@angular/material": "^11.2.12",
     "@angular/platform-browser": "~11.2.13",
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
     "bulma": "^0.9.2",
->>>>>>> b73136b ("maj3")
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@angular-devkit/build-angular": "~0.1102.12",
-=======
     "@angular-devkit/build-angular": "^0.1102.12",
->>>>>>> b73136b ("maj3")
     "@angular/cli": "~11.2.12",
     "@angular/compiler-cli": "~11.2.13",
     "@types/jasmine": "~3.6.0",
