@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-=======
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetItem } from 'src/shared/modules/budget-item.model';
+
+import { MatDialog } from '@angular/material/dialog';
 import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.component';
->>>>>>> b73136b ("maj3")
 
 @Component({
   selector: 'app-budget-item-list',
@@ -14,36 +11,42 @@ import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.compo
 })
 export class BudgetItemListComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
-  @Input()budgetItems:BudgetItem[];
-  @Output() delete:EventEmitter<any>= new EventEmitter;
-  constructor(public dialog:MatDialog) { }
->>>>>>> b73136b ("maj3")
+  
+  @Input() budgetItems: BudgetItem[];
+  @Output() delete: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+  @Output() update: EventEmitter<UpdateEvent> = new EventEmitter<UpdateEvent>();
 
-  ngOnInit(): void {
+  constructor(public dialog: MatDialog) { }
+
+  ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
-  onDeleteButtonClicked(item:BudgetItem){
+  onDeleteButtonClicked(item: BudgetItem) {
     this.delete.emit(item);
   }
-  onCardClicked (item:BudgetItem){
-    const DialogRef=this.dialog.open(EditItemModalComponent,{
-      width:'580px',
-      data:item
+
+  onCardClicked(item: BudgetItem) {
+    // show the edit modal
+    const dialogRef = this.dialog.open(EditItemModalComponent, {
+      width: '580px',
+      data: item
     });
 
-    DialogRef.afterClosed().subscribe(result=>{
-      // if no result value
-      if(result){
-        //replace the item updates
-        this.budgetItems[this.budgetItems.indexOf(item)]=result;
+    dialogRef.afterClosed().subscribe(result => {
+      // check if result has a value
+      if (result) {
+        this.update.emit({
+          old: item,
+          new: result
+        });
       }
     })
-   }
+  }
 
->>>>>>> b73136b ("maj3")
+}
+
+
+export interface UpdateEvent {
+  old: BudgetItem;
+  new: BudgetItem;
 }

@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { Component, Input, OnInit } from '@angular/core';
-=======
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetItem } from 'src/shared/modules/budget-item.model';
->>>>>>> b73136b ("maj3")
 
 @Component({
   selector: 'app-budget-item-card',
@@ -12,28 +8,22 @@ import { BudgetItem } from 'src/shared/modules/budget-item.model';
 })
 export class BudgetItemCardComponent implements OnInit {
 
-<<<<<<< HEAD
-  @Input() isIncome:boolean=true;
-=======
-  @Input() item:BudgetItem;
-  @Output()xButtonClick:EventEmitter<any>=new EventEmitter<any>();
-  @Output() cardClick:EventEmitter<any>=new EventEmitter<any>();
->>>>>>> b73136b ("maj3")
+  @Input() item: BudgetItem;
+  @Output() xButtonClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() cardClick: EventEmitter<any> = new EventEmitter<any>();
+  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
-  onXButtonClick(){
-    // evenement
+  onXButtonClick() {
+    // here we want emit an event
     this.xButtonClick.emit();
   }
 
-  onCardClick(){
+  onCardClick() {
     this.cardClick.emit();
-    }
+  }
 
->>>>>>> b73136b ("maj3")
 }
